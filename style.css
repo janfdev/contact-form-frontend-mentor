@@ -16,6 +16,7 @@ body {
 .container {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -158,4 +159,13 @@ button {
 
 button:hover {
   background-color: hsl(169, 72%, 22%);
+}
+
+.attribution {
+  margin-top: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }

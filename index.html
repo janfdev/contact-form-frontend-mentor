@@ -14,54 +14,74 @@
   </head>
   <body>
     <section class="container">
+      <!-- ---- -->
+
+      <div class="success-alert">
+        <div class="title">
+          <img src="/assets/images/icon-success-check.svg" alt="" />
+          <h5>Message Success Sent!</h5>
+        </div>
+        <p>Thanks to completing the form, We'll be in touch soon!</p>
+        <div class="progress-bar"></div>
+      </div>
+
+      <!-- -- -->
       <section class="app">
-        <form class="form">
+        <form class="form" id="form">
           <h1>Contact Us</h1>
 
           <!-- First Name & Last Name -->
           <div class="input-group">
             <div class="input-section">
-              <label for="firstName">First Name</label>
-              <input type="text" id="firstName" required />
+              <label for="firstName">First Name <span>*</span></label>
+              <input type="text" id="firstName" />
+              <small class="error-message"></small>
             </div>
             <div class="input-section">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" required />
+              <label for="lastName">Last Name <span>*</span></label>
+              <input type="text" id="lastName" />
+              <small class="error-message"></small>
             </div>
           </div>
 
           <!-- Email Address -->
           <div class="input-section">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" required />
+            <label for="email">Email Address <span>*</span></label>
+            <input type="email" id="email" />
+            <small class="error-message"></small>
           </div>
 
-          <div class="input-section">
-            <label>Query Type</label>
+          <div class="input-section-query">
+            <label>Query Type <span>*</span></label>
             <div class="radio-group">
               <label>
-                <input type="radio" name="queryType" value="general" required />
+                <input type="radio" name="queryType" value="general" />
                 General Enquiry
               </label>
               <label>
-                <input type="radio" name="queryType" value="support" required />
+                <input type="radio" name="queryType" value="support" />
                 Support Request
               </label>
             </div>
+            <small class="error-message"></small>
           </div>
 
           <!-- Message -->
           <div class="input-section">
-            <label for="message">Message</label>
-            <textarea id="message" rows="4" required></textarea>
+            <label for="message">Message <span>*</span></label>
+            <textarea id="message" rows="4"></textarea>
+            <small class="error-message"></small>
           </div>
 
           <!-- Consent Checkbox -->
           <div class="checkbox-section">
-            <input type="checkbox" id="consent" />
-            <label for="consent">
-              I consent to being contacted by the team</label
-            >
+            <div class="checkbox-group">
+              <input type="checkbox" id="consent" />
+              <label for="consent">
+                I consent to being contacted by the team</label
+              >
+            </div>
+            <small class="error-message"></small>
           </div>
 
           <button type="submit">Submit</button>

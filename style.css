@@ -3,7 +3,10 @@
 :root {
   --bg-color: hsl(148, 38%, 91%);
   --text-green-medium: hsl(169, 82%, 27%);
-  --text-gray: hsl(187, 24%, 22%);
+  --text-gray-darker: hsl(187, 24%, 22%);
+  --text-gray-medium: hsl(186, 15%, 59%);
+  --text-red: hsl(0, 66%, 54%);
+  --text-white: hsl(0, 0%, 100%);
 }
 
 body {
@@ -23,8 +26,10 @@ body {
 }
 
 .app {
+  position: relative;
   background-color: #fff;
   max-width: 500px;
+  margin-top: 80px;
   width: 100%;
   border-radius: 10px;
   padding: 30px;
@@ -34,6 +39,63 @@ body {
 h1 {
   text-align: left;
   font-size: 24px;
+}
+
+span {
+  color: var(--text-red);
+}
+
+.success-alert {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  margin-top: 10px;
+  display: none;
+  background-color: var(--text-gray-darker);
+  width: 450px;
+  min-height: 50px;
+  padding: 0px 20px;
+  border-radius: 10px;
+  color: var(--bg-color);
+}
+
+.success-alert .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.success-alert h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.success-alert p {
+  font-size: 13px;
+  margin: 5px 0 15px 0;
+}
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--bg-color);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.progress-bar.active {
+  animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .input-group {
@@ -48,11 +110,17 @@ h1 {
   flex: 1;
 }
 
+.input-section-query {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
 label {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 7px;
-  color: var(--text-gray);
+  color: var(--text-gray-darker);
 }
 
 input,
@@ -136,14 +204,24 @@ textarea:focus {
 
 .checkbox-section {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
   margin-bottom: 15px;
 }
 
-.checkbox-section input {
-  width: 20px;
-  height: 20px;
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  margin-top: 5px;
+}
+
+.checkbox-group input {
+  width: 15px;
+  height: 15px;
   border: 2px solid #ccc;
   border-radius: 5px;
   position: relative;
@@ -174,6 +252,11 @@ button:hover {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+.error-message {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--text-red);
 }
 
 @media screen and (max-width: 375px) {

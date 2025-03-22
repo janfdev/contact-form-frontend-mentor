@@ -30,35 +30,53 @@
       <section class="app">
         <form class="form">
           <h1>Contact Us</h1>
-          <div class="input-section">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" />
+
+          <!-- First Name & Last Name -->
+          <div class="input-group">
+            <div class="input-section">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" required />
+            </div>
+            <div class="input-section">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" required />
+            </div>
           </div>
-          <div class="input-section">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" />
-          </div>
+
+          <!-- Email Address -->
           <div class="input-section">
             <label for="email">Email Address</label>
-            <input type="email" id="email" />
+            <input type="email" id="email" required />
           </div>
+
           <div class="input-section">
-            <label for="firstName">Query Type</label>
-            <select name="queryType" id="queryType">
-              <option value="general">General Enquiry</option>
-              <option value="support">Support Request</option>
-            </select>
+            <label>Query Type *</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="queryType" value="general" required />
+                General Enquiry
+              </label>
+              <label>
+                <input type="radio" name="queryType" value="support" required />
+                Support Request
+              </label>
+            </div>
           </div>
+
+          <!-- Message -->
           <div class="input-section">
             <label for="message">Message</label>
-            <input type="text" id="message" />
+            <textarea id="message" rows="4" required></textarea>
           </div>
-          <div class="input-section">
+
+          <!-- Consent Checkbox -->
+          <div class="checkbox-section">
             <input type="checkbox" id="consent" />
-            <label for="consent"
-              >I consent to being contacted by the team</label
+            <label for="consent">
+              I consent to being contacted by the team</label
             >
           </div>
+
           <button type="submit">Submit</button>
         </form>
       </section>

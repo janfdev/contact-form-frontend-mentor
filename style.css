@@ -3,6 +3,7 @@
 :root {
   --bg-color: hsl(148, 38%, 91%);
   --text-green-medium: hsl(169, 82%, 27%);
+  --text-gray: hsl(187, 24%, 22%);
 }
 
 body {
@@ -51,6 +52,7 @@ label {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 7px;
+  color: var(--text-gray);
 }
 
 input,
@@ -111,6 +113,10 @@ textarea:focus {
   transition: all 0.3s ease;
 }
 
+.radio-group label:has(input:checked) {
+  border: 2px solid var(--text-green-medium);
+}
+
 .radio-group label input:checked {
   background-color: transparent;
   border-color: var(--text-green-medium);
@@ -168,4 +174,39 @@ button:hover {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 50px;
+  }
+
+  .app {
+    padding: 30px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .radio-group {
+    flex-direction: column;
+    gap: 15px;
+    width: 92%;
+  }
+  .radio-group label {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .checkbox-section {
+    gap: 10px;
+  }
+  .checkbox-section label {
+    font-weight: normal;
+  }
+  .attribution {
+    font-size: 14px;
+  }
 }
